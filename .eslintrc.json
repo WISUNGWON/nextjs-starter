@@ -24,6 +24,7 @@
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
     "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": "off",
     "react/prefer-stateless-function": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-filename-extension": "off", // <> </>쓰는 것을 방지
