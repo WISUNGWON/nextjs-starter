@@ -1,0 +1,63 @@
+export const theme = {
+  colors: {
+    white: "#FFFFFF",
+
+    gray5: "#FAFAFB",
+    gray10: "#F4F5F8",
+    gray20: "#E6E9ED",
+    gray30: "#CED3D8",
+    gray40: "#B3B8BD",
+    gray50: "#9AA0A7",
+    gray60: "#767D85",
+    gray70: "#51575E",
+    gray80: "#3A3E44",
+    gray90: "#222429",
+    gray100: "#131517",
+
+    pointBlue5: "#F1F3FF",
+    pointBlue10: "#D1D8FF",
+    pointBlue20: "#B7C1FF",
+    pointBlue30: "#94A3FF",
+    pointBlue40: "#7E90FE",
+    pointBlue50: "#647AFD",
+    pointBlue60: "#4B5FF6",
+    pointBlue70: "#3D51EB",
+
+    yellow10: "#F2CF8A",
+    yellow20: "#F2CF8A",
+    yellow30: "#F2CF8A",
+    yellow40: "#F2CF8A",
+    yellow50: "#F2CF8A",
+    yellow60: "#F2CF8A",
+    yellow70: "#F2CF8A",
+
+    pink10: "#FCF0F1",
+    pink20: "#F5C4CA",
+    pink30: "#F3B4BD",
+    pink40: "#F1A6B0",
+    pink50: "#EE8A96",
+    pink60: "#EC6E7C",
+    pink70: "#E45E6D",
+
+    confirm: "#4B5FF6",
+    error: "#DB3351",
+    errorDark: "#CE203F",
+
+    verified: "#50E3E3",
+    link: "#1A76FF",
+
+    alphaBlack70: "rgba(0, 0, 0, 0.7)",
+    alphaBlack50: "rgba(0, 0, 0, 0.5)",
+    alphaBlack16: "rgba(0, 0, 0, 0.16)",
+    alphaBlack12: "rgba(0, 0, 0, 0.12)",
+    alphaWhite80: "rgba(255, 255, 255, 0.8)",
+    alphaWhite50: "rgba(255, 255, 255, 0.5)",
+    alphaWhite20: "rgba(255, 255, 255, 0.2)",
+    alphaBlue80: "rgba(75, 95, 246, 0.8)",
+
+    shadowCard: "0px 8px 40px rgba(0, 0, 0, 0.08)",
+    shadowModal: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+    shadowCareerCard: "0px 8px 72px rgba(0, 0, 0, 0.08)",
+    shadowBookShelf: "6px 10px 16px rgba(0, 0, 0, 0.15)",
+  },
+};
