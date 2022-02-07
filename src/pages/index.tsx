@@ -3,7 +3,7 @@ import Head from "next/head";
 import styled from "@emotion/styled";
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.gray90};
+  background-color: ${(props) => props.theme.colors.gray5};
 `;
 
 const Home: NextPage = () => {
