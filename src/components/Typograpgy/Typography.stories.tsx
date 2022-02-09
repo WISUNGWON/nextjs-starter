@@ -1,5 +1,4 @@
 import React from "react";
-import { Meta } from "@storybook/react";
 import styled from "@emotion/styled";
 
 import { Typography } from "./Typography";
@@ -38,7 +37,7 @@ const Title = styled.div`
 export default {
   title: "Typography",
   component: Typography.Text,
-} as Meta;
+};
 
 export const TextKorean: React.VFC = () => (
   <Template>
