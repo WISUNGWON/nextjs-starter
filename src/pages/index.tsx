@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { Typography } from "@components/Typograpgy/Typography";
+import { Typography } from "@components/Typography/Typography";
 import { css } from "@emotion/react";
 
 const Wrapper = styled.div`
