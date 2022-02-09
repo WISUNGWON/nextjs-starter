@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { Typography } from "@components/Typography/Typography";
+import { Typography, Button } from "@components/ui";
 import { css } from "@emotion/react";
+import {} from "@components/ui/Button/Button";
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
       >
         Hello Page
       </Typography.Text>
+      <Button>Button</Button>
     </Wrapper>
   );
 };
