@@ -2,6 +2,7 @@ const { merge } = require("webpack-merge");
 const path = require("path");
 const fs = require("fs");
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 function getPackageDir(filepath) {
   let currDir = path.dirname(require.resolve(filepath));
@@ -39,7 +40,12 @@ module.exports = {
           "@emotion/styled": getPackageDir("@emotion/styled"),
           "emotion-theming": getPackageDir("@emotion/react"),
         },
-        plugins: [PnpWebpackPlugin],
+        plugins: [
+          PnpWebpackPlugin,
+          new TsconfigPathsPlugin({
+            configFile: path.resolve(__dirname, "../tsconfig.json"),
+          }),
+        ],
       },
       resolveLoader: {
         plugins: [PnpWebpackPlugin.moduleLoader(module)],
