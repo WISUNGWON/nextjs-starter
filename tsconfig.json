@@ -16,10 +16,11 @@
     "jsxImportSource": "@emotion/react",
     "incremental": true,
     "baseUrl": ".",
+    "jsxImportSource": "@emotion/react",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@pages/*": ["pages/*"],
-      "@api/*": ["src/lib/api/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"]
     }
   },
