@@ -1,6 +1,7 @@
 export interface ThemeType {
   colors: {
     white: string;
+    pressed: string;
 
     slategray10: string;
     slategray20: string;

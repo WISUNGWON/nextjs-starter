@@ -1,51 +1,61 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import styled from "@emotion/styled";
+import { SerializedStyles } from "@emotion/react";
 
-export const DropdownContainer = styled.div`
-  width: 400px;
+const Container = styled.div`
+  width: 100%;
+  position: relative;
 
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const DropdownBody = styled.div`
+const DropdownWrapper = styled.div<{ open?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9px 14px;
-  border: 2px solid #d2d2d2;
+  height: 44px;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: ${({ open, theme }) =>
+    open ? "white" : theme.colors.pressed};
+  border: 1px solid ${({ theme }) => theme.colors.slategray20};
 `;
 
-export const DropdownSelect = styled.p`
-  font-weight: bold;
+const SelectedItem = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.slategray40};
 `;
 
-export const DropdownMenu = styled.ul<{ isActive?: boolean }>`
-  display: ${(props) => (props.isActive ? `block` : `none`)};
-  width: 400px;
+const DropdownMenu = styled.ul<{ open?: boolean }>`
+  display: ${({ open }) => (open ? `block` : `none`)};
+  width: 100%;
+  max-height: 220px;
+  margin-top: 6px;
+  overflow: auto;
   background-color: white;
   position: absolute;
-  border: 2px solid #f4acbb;
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.colors.slategray20};
 `;
 
-export const DropdownItemContainer = styled.li`
+const DropdownItemContainer = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 9px 14px;
-  border-bottom: 2px solid #d2d2d2;
+  padding: 12px;
   border-top: none;
 
-  &:last-child {
-    border-bottom: none;
+  :hover {
+    background-color: ${({ theme }) => theme.colors.primaryGreen10};
   }
 `;
 
-export const ItemName = styled.p`
-  font-weight: bold;
+const Item = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.slategray40};
 `;
 
 interface DropdownProps {
@@ -53,56 +63,50 @@ interface DropdownProps {
     id: number;
     name: string;
   }[];
+  cssStyle?: SerializedStyles;
+  onSelect?: () => void;
 }
 
-const Dropdown = ({ items }: DropdownProps) => {
-  const [isActive, setIsActive] = useState(false);
+export const Dropdown = ({ items, cssStyle, onSelect }: DropdownProps) => {
+  const [open, setOpen] = useState(false);
   const [item, setItem] = useState(null);
 
-  const onActiveToggle = useCallback(() => {
-    setIsActive((prev) => !prev);
-  }, []);
-
-  const onSelectItem = useCallback((e) => {
+  const handleSelectItem = (e: any) => {
     const targetId = e.target.id;
-
     if (targetId === "item_name") {
-      setItem(e.target.parentElement.innertText);
+      setItem(e.target.parentElement.innerText);
     } else if (targetId === "item") {
-      setItem(e.target.innertText);
+      setItem(e.target.innerText);
     }
 
-    setIsActive((prev) => !prev);
-  }, []);
+    onSelect && onSelect();
+    setOpen((draft) => !draft);
+  };
 
   return (
-    <DropdownContainer>
-      <DropdownBody onClick={onActiveToggle}>
-        {item ? (
-          <>
-            <ItemName>{item}</ItemName>
-          </>
-        ) : (
-          <>
-            <DropdownSelect>선택해 주세요.</DropdownSelect>
-            <Image
-              src="/icons/arrow-down.svg"
-              width={24}
-              height={24}
-              alt="arrow-down"
-            />
-          </>
-        )}
-      </DropdownBody>
-      <DropdownMenu isActive={isActive}>
+    <Container css={cssStyle}>
+      <DropdownWrapper open={open} onClick={() => setOpen(!open)}>
+        <>
+          <SelectedItem>{item ? item : "선택해 주세요."}</SelectedItem>
+          <Image
+            src="/icons/arrow-down.svg"
+            width={24}
+            height={24}
+            alt="arrow-down"
+          />
+        </>
+      </DropdownWrapper>
+      <DropdownMenu open={open}>
         {items.map((item) => (
-          <DropdownItemContainer id="item" key={item.id} onClick={onSelectItem}>
-            <ItemName id="item_name">{item.name}</ItemName>
+          <DropdownItemContainer
+            id="item"
+            key={item.id}
+            onClick={handleSelectItem}
+          >
+            <Item id="item_name">{item.name}</Item>
           </DropdownItemContainer>
         ))}
       </DropdownMenu>
-    </DropdownContainer>
+    </Container>
   );
 };
-
-export default Dropdown;

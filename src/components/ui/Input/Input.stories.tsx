@@ -2,11 +2,10 @@ import styled from "@emotion/styled";
 import React from "react";
 
 import { Input } from "./Input";
-import { Button } from "@components/ui";
+import { Button, Dropdown } from "@components/ui";
 import { StoryContainer, Layout, Title } from "@components/ui/styles";
 import { SearchInput } from "./SearchInput";
 import { css } from "@emotion/react";
-import Dropdown from "../Dropdown/Dropdown";
 
 const Row = styled.div`
   display: flex;
@@ -35,6 +34,16 @@ export default {
   component: Input,
 };
 
+const items = [
+  { id: 1, name: "서울" },
+  { id: 2, name: "부산" },
+  { id: 3, name: "울산" },
+  { id: 4, name: "경기" },
+  { id: 5, name: "대구" },
+  { id: 6, name: "광주" },
+  { id: 7, name: "제주" },
+];
+
 export const Default: React.FC = () => {
   return (
     <Layout>
@@ -54,16 +63,14 @@ export const Default: React.FC = () => {
             </Row>
             <SearchInput
               cssStyle={css`
-                margin-top: 16px;
+                margin-top: 24px;
               `}
               defaultValue="Search Input"
             />
-            <Dropdown
-              items={[
-                { id: 1, name: "서울" },
-                { id: 2, name: "부산" },
-              ]}
-            />
+            <Row style={{ marginTop: 24 }}>
+              <Input defaultValue="기본" style={{ marginRight: 8 }} />
+              <Dropdown items={items} />
+            </Row>
           </StyledColumn>
         </Container>
       </StoryContainer>
