@@ -5,7 +5,7 @@ myNextApplication:
       defaultLambda: DefaultLambda
       imageLambda: ImageLambda
     bucketRegion: 'ap-northeast-2'
-    bucketName: 'kw5btnot-k5yh9h'
+    bucketName: 'myNext-s3'
     cloudfront:
-      distributionId: 'E3V7OUUNVSTJZB',
+      distributionId: 'E8IE62AQKOKPY',
       comment: 'next deploy'
