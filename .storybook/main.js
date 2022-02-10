@@ -29,10 +29,7 @@ module.exports = {
   framework: "@storybook/react",
   staticDirs: ["../public"],
   babel: async (options) => ({
-    presets: [
-      ["@babel/preset-react", { runtime: "automatic" }],
-      "@emotion/babel-preset-css-prop",
-    ],
+    presets: ["@emotion/babel-preset-css-prop"],
   }),
   webpackFinal: async (config) => {
     config.module.rules.unshift({
