@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           font-size: 32px;
         `}
       >
-        Hello Page
+        Hello Page2
       </Typography.Text>
       <Button
         css={css`
