@@ -28,7 +28,12 @@ module.exports = {
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   framework: "@storybook/react",
   staticDirs: ["../public"],
-  babel: async (options) => ({ presets: ["@emotion/babel-preset-css-prop"] }),
+  babel: async (options) => ({
+    presets: [
+      ["@babel/preset-react", { runtime: "automatic" }],
+      "@emotion/babel-preset-css-prop",
+    ],
+  }),
   webpackFinal: async (config) => {
     config.module.rules.unshift({
       test: /\.svg$/,
@@ -37,6 +42,7 @@ module.exports = {
     config.resolve.extensions.push(".ts", ".tsx");
     return merge(config, {
       resolve: {
+        // alias: @storybook/addon-docs(emotion 10)와 최신 emotion의 충돌 우회
         alias: {
           "@emotion/core": getPackageDir("@emotion/react"),
           "@emotion/styled": getPackageDir("@emotion/styled"),

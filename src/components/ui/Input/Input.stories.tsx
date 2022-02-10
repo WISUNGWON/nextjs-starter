@@ -6,6 +6,7 @@ import { Button } from "@components/ui";
 import { StoryContainer, Layout, Title } from "@components/ui/styles";
 import { SearchInput } from "./SearchInput";
 import { css } from "@emotion/react";
+import Dropdown from "../Dropdown/Dropdown";
 
 const Row = styled.div`
   display: flex;
@@ -56,6 +57,12 @@ export const Default: React.FC = () => {
                 margin-top: 16px;
               `}
               defaultValue="Search Input"
+            />
+            <Dropdown
+              items={[
+                { id: 1, name: "서울" },
+                { id: 2, name: "부산" },
+              ]}
             />
           </StyledColumn>
         </Container>
