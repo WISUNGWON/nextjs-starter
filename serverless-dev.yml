@@ -1,0 +1,12 @@
+dev-nextjs-starter:
+  component: '@sls-next/serverless-component@2.72.2'
+  inputs:
+    bucketName: dev-nextjs-starter-s3
+    description: '*lambda-type*@Edge for dev-nextjs-starter'
+    name:
+      defaultLambda: dev-nextjs-starter-lambda
+      apiLambda: dev-nextjs-starter-lambda
+    publicDirectoryCache: false
+    runtime:
+      defaultLambda: 'nodejs12.x'
+      apiLambda: 'nodejs12.x'
