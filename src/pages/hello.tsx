@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { Typography, Button, Input } from "@components/ui";
+import { Typography, Button, Input, Dropdown } from "@components/ui";
 import { css } from "@emotion/react";
 import { SearchIcon } from "@components/ui/Icon/Icons";
-import Dropdown from "@components/ui/Dropdown/Dropdown";
 
 const Wrapper = styled.div`
   display: flex;
