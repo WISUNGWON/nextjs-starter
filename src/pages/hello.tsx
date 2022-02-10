@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "@emotion/styled";
-import { Typography, Button } from "@components/ui";
+import { Typography, Button, Input } from "@components/ui";
 import { css } from "@emotion/react";
-import {} from "@components/ui/Button/Button";
+import { SearchIcon } from "@components/ui/Icon/Icons";
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,7 +31,29 @@ const Home: NextPage = () => {
       >
         Hello Page
       </Typography.Text>
-      <Button>Button</Button>
+      <Button
+        css={css`
+          width: 60px;
+        `}
+      >
+        Button
+      </Button>
+      <div
+        css={css`
+          position: relative;
+        `}
+      >
+        <Input />
+        <div
+          css={css`
+            position: absolute;
+            top: 10px;
+            right: 12px;
+          `}
+        >
+          <SearchIcon />
+        </div>
+      </div>
     </Wrapper>
   );
 };

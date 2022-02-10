@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 interface ButtonProps {
   variant?: "fill" | "line";
-  size?: "h32" | "h48";
+  size?: "h32" | "h44" | "h48";
 }
 
 const defaultProps = {
@@ -13,6 +13,7 @@ const defaultProps = {
 
 export const Button = styled.button<ButtonProps>`
   position: flex;
+  width: 100%;
   justify-content: center;
   align-content: center;
   height: 32px;
@@ -32,9 +33,29 @@ export const Button = styled.button<ButtonProps>`
     `}
 
   ${(props: any) =>
+    props.size === "h44" &&
+    css`
+      height: 44px;
+      padding: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 4px;
+    `}
+
+    ${(props: any) =>
+    props.size === "h48" &&
+    css`
+      height: 48px;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 4px;
+    `}
+
+  ${(props: any) =>
     props.variant === "fill" &&
     css`
-      background-color: ${props.theme.colors.primary};
+      background-color: ${props.theme.colors.primaryGreen60};
       color: ${props.theme.colors.white};
       border: none;
 
@@ -61,7 +82,7 @@ export const Button = styled.button<ButtonProps>`
 
       :active {
         color: ${props.theme.colors.slategray80};
-        border: 1px solid ${props.theme.colors.primary};
+        border: 1px solid ${props.theme.colors.primaryGreen60};
       }
 
       :disabled {

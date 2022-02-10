@@ -41,7 +41,6 @@ export const Default: React.FC = () => {
         <Container>
           <StyledRow>
             <Button variant="fill">h32 fill</Button>
-            <Button variant="fill">h32 fill actived</Button>
             <Button variant="fill" disabled>
               h32 fill disabled
             </Button>
@@ -50,9 +49,6 @@ export const Default: React.FC = () => {
           <StyledRow>
             <Button variant="fill" size="h48">
               h48 fill
-            </Button>
-            <Button variant="fill" size="h48">
-              h48 fill actived
             </Button>
             <Button variant="fill" size="h48" disabled>
               h48 fill disabled
@@ -74,6 +70,14 @@ export const Line: React.FC = () => {
             <Button>h32 line</Button>
             <Button>h32 line actived</Button>
             <Button disabled>h32 line disabled</Button>
+          </StyledRow>
+          <Space />
+          <StyledRow>
+            <Button size="h44">h44 line</Button>
+            <Button size="h44">h44 line actived</Button>
+            <Button size="h44" disabled>
+              h48 line disabled
+            </Button>
           </StyledRow>
           <Space />
           <StyledRow>

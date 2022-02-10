@@ -1,7 +1,7 @@
 import "../styles/reset.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { PageLayout } from "@components/PageLayout/PageLayout";
+import { PageLayout } from "@components/ui/PageLayout/PageLayout";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "@styles/themes";
 

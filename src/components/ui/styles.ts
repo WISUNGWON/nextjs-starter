@@ -26,3 +26,8 @@ export const Title = styled.div`
 export const Space = styled.div`
   margin-top: 28px;
 `;
+
+export const SubTitle = styled.div`
+  font-size: 20px;
+  margin-bottom: 16px;
+`;

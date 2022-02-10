@@ -6,31 +6,27 @@ import { ITypographyProps } from "./Typography";
 const Text = styled.span<ITypographyProps>`
   display: block;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
 
   ${({ type }) =>
     type === "primary" &&
     css`
-      font-size: 16px;
+      font-size: 32px;
     `}
   ${({ type }) =>
     type === "secondary" &&
     css`
-      font-size: 14px;
-      line-height: 1.4;
+      font-size: 24px;
+      line-height: 3.2;
+      font-weight: 400;
     `}
   ${({ type }) =>
     type === "tertiary" &&
     css`
-      font-size: 12px;
-      line-height: 1.2;
-    `}
-  ${({ type }) =>
-    type === "quaternary" &&
-    css`
-      font-size: 10px;
-      line-height: 1;
+      font-size: 18px;
+      line-height: 2.4;
+      font-weight: 400;
     `}
 
   ${({ gutter }) => {
@@ -53,16 +49,6 @@ const Text = styled.span<ITypographyProps>`
     css`
       text-align: ${align};
     `}
-  ${({ bold }) =>
-    bold &&
-    css`
-      font-weight: 700;
-    `}
-  ${({ medium }) =>
-    medium &&
-    css`
-      font-weight: 500;
-    `}
     
   ${({ inline }) =>
     inline &&
@@ -76,14 +62,10 @@ const Text = styled.span<ITypographyProps>`
       color: ${theme.colors[color]};
     `}
 
-    ${({ onClick, theme }) =>
+    ${({ onClick }) =>
     onClick &&
     css`
       cursor: pointer;
-
-      :hover {
-        color: ${theme.colors.primaryGreen60};
-      }
     `}
 `;
 

@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 
 import { ITypographyProps } from "./Typography";
 
-const Text = styled.span<ITypographyProps>`
+const Title = styled.span<ITypographyProps>`
   display: block;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
+  font-weight: 700;
+  line-height: 2.4;
 
   ${({ type }) =>
     type === "primary" &&
@@ -19,18 +19,6 @@ const Text = styled.span<ITypographyProps>`
     css`
       font-size: 14px;
       line-height: 1.4;
-    `}
-  ${({ type }) =>
-    type === "tertiary" &&
-    css`
-      font-size: 12px;
-      line-height: 1.2;
-    `}
-  ${({ type }) =>
-    type === "quaternary" &&
-    css`
-      font-size: 10px;
-      line-height: 1;
     `}
 
   ${({ gutter }) => {
@@ -76,15 +64,11 @@ const Text = styled.span<ITypographyProps>`
       color: ${theme.colors[color]};
     `}
 
-    ${({ onClick, theme }) =>
+    ${({ onClick }) =>
     onClick &&
     css`
       cursor: pointer;
-
-      :hover {
-        color: ${theme.colors.primaryGreen60};
-      }
     `}
 `;
 
-export default Text;
+export default Title;
