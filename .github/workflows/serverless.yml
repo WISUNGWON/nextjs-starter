@@ -1,7 +1,6 @@
 name: NEXT Deploy
-on:
-  push:
-    branches: main
+on: workflow_dispatch
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,4 +23,4 @@ jobs:
 
       - name: Deploy Next.js app
         run: |
-          npm run deploy
+          npx serverless
