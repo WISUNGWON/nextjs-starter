@@ -21,12 +21,12 @@ jobs:
 
       - uses: canastro/copy-file-action@master
         with:
-          source: 'serverless-dev.yml'
-          target: 'serverless.yml'
+          source: "serverless-dev.yml"
+          target: "serverless.yml"
 
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: "14"
 
       - name: Install dependencies
         run: npm install
@@ -41,7 +41,7 @@ jobs:
         run: aws s3 sync s3://nextjs-starter-serverless-state-bucket/nextjs-starter/dev/.serverless .serverless --delete
 
       - name: Deploy to AWS
-        run: npx serverless
+        run: npm run deploy
 
       - name: Upload `.serverless` state to S3
         run: aws s3 sync .serverless s3://nextjs-starter-serverless-state-bucket/nextjs-starter/dev/.serverless --delete

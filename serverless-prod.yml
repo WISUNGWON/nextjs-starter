@@ -1,8 +1,9 @@
 prod-nextjs-starter:
-  component: '@sls-next/serverless-component'
+  component: "@sls-next/serverless-component"
   inputs:
+    bucketRegion: "ap-northeast-2"
     bucketName: prod-nextjs-starter-s3
-    description: '*lambda-type*@Edge for prod-nextjs-starter'
+    description: "*lambda-type*@Edge for prod-nextjs-starter"
     name:
       defaultLambda: prod-nextjs-starter-lambda
       apiLambda: prod-nextjs-starter-lambda
@@ -10,5 +11,5 @@ prod-nextjs-starter:
     cloudfront:
       distributionId: "EPXG7T8ZWPGXI"
     runtime:
-      defaultLambda: 'nodejs12.x'
-      apiLambda: 'nodejs12.x'
+      defaultLambda: "nodejs12.x"
+      apiLambda: "nodejs12.x"
