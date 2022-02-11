@@ -2,7 +2,7 @@ prod-nextjs-starter:
   component: "@sls-next/serverless-component"
   inputs:
     roleArn: "arn:aws:iam::226881276779:role/prod-nextjs-starter-lambda-role"
-    bucketRegion: "us-east-1"
+    bucketRegion: "ap-northeast-2"
     bucketName: prod-nextjs-starter-s3
     description: "*lambda-type*@Edge for prod-nextjs-starter"
     name:
