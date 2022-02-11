@@ -1,7 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Typography } from "@components/ui";
-import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+
+const Banner = styled.div`
+  width: 100%;
+  height: 300px;
+  background: no-repeat url("/images/banner-test.jpg");
+  background-size: 100% 100%;
+`;
 
 const Home: NextPage = () => {
   return (
@@ -15,54 +21,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Typography.Text
-        css={css`
-          font-size: 32px;
-        `}
-      >
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js StarterHello Next-js StarterHello Next-js
-        StarterHello Next-js Starterv
-      </Typography.Text>
+      <Banner />
     </div>
   );
 };

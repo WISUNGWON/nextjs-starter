@@ -86,15 +86,13 @@ export const Dropdown = ({ items, cssStyle, onSelect }: DropdownProps) => {
   return (
     <Container css={cssStyle}>
       <DropdownWrapper open={open} onClick={() => setOpen(!open)}>
-        <>
-          <SelectedItem>{item ? item : "선택해 주세요."}</SelectedItem>
-          <Image
-            src="/icons/arrow-down.svg"
-            width={24}
-            height={24}
-            alt="arrow-down"
-          />
-        </>
+        <SelectedItem>{item ? item : "선택해 주세요."}</SelectedItem>
+        <Image
+          src="/icons/arrow-down.svg"
+          width={24}
+          height={24}
+          alt="arrow-down"
+        />
       </DropdownWrapper>
       <DropdownMenu open={open}>
         {items.map((item) => (

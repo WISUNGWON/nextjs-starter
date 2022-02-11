@@ -1,11 +1,9 @@
 import { ThemeType } from "@styles/themes/ThemeType";
 
 import Text from "./Text";
-import Title from "./Title";
-import Headline from "./Headline";
 
 export interface ITypographyProps {
-  type?: "primary" | "secondary" | "tertiary" | "quaternary";
+  type?: "h1" | "h2" | "h3" | "s1" | "s2" | "b1" | "b2" | "small" | "caption";
   gutter?:
     | number
     | { top?: number; bottom?: number; left?: number; right?: number };
@@ -17,4 +15,4 @@ export interface ITypographyProps {
   underline?: boolean;
 }
 
-export const Typography = { Text, Title, Headline };
+export const Typography = { Text };

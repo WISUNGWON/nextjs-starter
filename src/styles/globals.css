@@ -4,6 +4,5 @@ html,
 body {
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   background-color: #e5e5e5;
-  
-  overflow: overlay;
+  overscroll-behavior: none;
 }

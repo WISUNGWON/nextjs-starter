@@ -10,24 +10,60 @@ const Text = styled.span<ITypographyProps>`
   line-height: 1.6;
 
   ${({ type }) =>
-    type === "primary" &&
+    type === "h1" &&
     css`
-      font-size: 16px;
+      font-size: 32px;
     `}
   ${({ type }) =>
-    type === "secondary" &&
+    type === "h2" &&
+    css`
+      font-size: 24px;
+      line-height: 3.2;
+      font-weight: 400;
+    `}
+  ${({ type }) =>
+    type === "h3" &&
+    css`
+      font-size: 18px;
+      line-height: 2.4;
+      font-weight: 400;
+    `}
+
+     ${({ type }) =>
+    type === "s1" &&
+    css`
+      font-size: 16px;
+      line-height: 2.4;
+      font-weight: 700;
+    `}
+  ${({ type }) =>
+    type === "s2" &&
+    css`
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 700;
+    `}
+
+  ${({ type }) =>
+    type === "b1" &&
+    css`
+      font-size: 16px;
+      line-height: 1.6;
+    `}
+  ${({ type }) =>
+    type === "b2" &&
     css`
       font-size: 14px;
       line-height: 1.4;
     `}
   ${({ type }) =>
-    type === "tertiary" &&
+    type === "small" &&
     css`
       font-size: 12px;
       line-height: 1.2;
     `}
   ${({ type }) =>
-    type === "quaternary" &&
+    type === "caption" &&
     css`
       font-size: 10px;
       line-height: 1;
