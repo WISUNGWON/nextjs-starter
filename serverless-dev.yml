@@ -1,7 +1,6 @@
 dev-nextjs-starter:
   component: "@sls-next/serverless-component"
   inputs:
-    bucketRegion: "ap-northeast-2"
     bucketName: dev-nextjs-starter-s3
     description: "*lambda-type*@Edge for dev-nextjs-starter"
     name:
