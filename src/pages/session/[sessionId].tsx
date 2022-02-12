@@ -15,7 +15,7 @@ const SessionDetail = ({ photoUrl }: any) => {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:image" content={photoUrl} />
       </Head>
-      <Typography.Text>Hello {photoUrl}</Typography.Text>
+      <Typography.Text>Hello!! {photoUrl}</Typography.Text>
       <Image src={photoUrl} height={200} width={200} alt="image" />
     </>
   );
