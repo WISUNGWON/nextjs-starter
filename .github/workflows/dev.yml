@@ -31,11 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Generate Environment Variables File
-        run: |
-          echo "NEXT_PUBLIC_UNSPLASH_API_KEY=$NEXT_PUBLIC_UNSPLASH_API_KEY" >> .env
-        env:
-          NEXT_PUBLIC_UNSPLASH_API_KEY: ${{ secrets.NEXT_PUBLIC_UNSPLASH_API_KEY }}
+      # - name: Generate Environment Variables File
+      #   run: |
+      #     echo "NEXT_PUBLIC_UNSPLASH_API_KEY=$NEXT_PUBLIC_UNSPLASH_API_KEY" >> .env
+      #   env:
+      #     NEXT_PUBLIC_UNSPLASH_API_KEY: ${{ secrets.NEXT_PUBLIC_UNSPLASH_API_KEY }}
 
       - name: Serverless AWS authentication
         run: npx serverless --component=serverless-next config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
