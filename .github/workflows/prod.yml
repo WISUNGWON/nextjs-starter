@@ -3,7 +3,10 @@
 # GitHub Action for Serverless NextJS production environment
 #
 name: Deploy prod-nextjs-starter
-on: workflow_dispatch
+# on: workflow_dispatch
+on:
+  push:
+    branches: [main]
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest

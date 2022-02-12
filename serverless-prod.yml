@@ -8,8 +8,6 @@ prod-nextjs-starter:
       defaultLambda: prod-nextjs-starter-lambda
       apiLambda: prod-nextjs-starter-lambda
     publicDirectoryCache: true
-    # cloudfront:
-    #   distributionId: "EPXG7T8ZWPGXI"
     runtime:
       defaultLambda: "nodejs12.x"
       apiLambda: "nodejs12.x"
