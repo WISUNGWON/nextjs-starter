@@ -4,25 +4,22 @@ import styled from "@emotion/styled";
 import { Typography, Button, Input, Dropdown } from "@components/ui";
 import { css } from "@emotion/react";
 import { SearchIcon } from "@components/ui/Icon/Icons";
+import unsplash from "../core/api/unsplash";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 `;
 
-const Home: NextPage = () => {
+const Hello: NextPage = ({ photoUrl }: any) => {
   return (
     <Wrapper>
       <Head>
         <title>Hello</title>
         <meta name="description" content="Hello!" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:image"
-          content="https://picsum.photos/seed/picsum/200/300"
-        />
+        <meta property="og:image" content={photoUrl} />
       </Head>
       <Typography.Text
         css={css`
@@ -59,4 +56,14 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export async function getStaticProps() {
+  const response = await unsplash.get("/photos/random");
+  const photoUrl = response.data.urls.small ?? "";
+  return {
+    props: {
+      photoUrl,
+    },
+  };
+}
+
+export default Hello;
