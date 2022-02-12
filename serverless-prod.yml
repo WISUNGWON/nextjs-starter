@@ -1,13 +1,15 @@
 prod-nextjs-starter:
   component: "@sls-next/serverless-component"
   inputs:
-    domain: "lavtest.com"
+    domain: "lavtest.shop"
     roleArn: "arn:aws:iam::226881276779:role/prod-nextjs-starter-lambda-role"
     bucketName: prod-nextjs-starter-s3
     description: "*lambda-type*@Edge for prod-nextjs-starter"
     name:
       defaultLambda: prod-nextjs-starter-lambda
       apiLambda: prod-nextjs-starter-lambda
+    cloudfront:
+      distributionId: "E13B6WZFSTHYEC"
     publicDirectoryCache: true
     runtime:
       defaultLambda: "nodejs12.x"
