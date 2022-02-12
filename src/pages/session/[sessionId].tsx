@@ -1,10 +1,8 @@
 import { Typography } from "@components/ui";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import unsplash from "src/core/api/unsplash";
 
-const SessionDetail = ({ photoUrl }: any) => {
+const SessionDetail = () => {
   const router = useRouter();
   const { sessionId } = router.query;
   return (
@@ -13,10 +11,8 @@ const SessionDetail = ({ photoUrl }: any) => {
         <title>Hello {sessionId}</title>
         <meta name="description" content="Hello!" />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content={photoUrl} />
       </Head>
-      <Typography.Text>Hello {photoUrl}</Typography.Text>
-      <Image src={photoUrl} height={200} width={200} alt="image" />
+      <Typography.Text>Hello</Typography.Text>
     </>
   );
 };
@@ -29,16 +25,6 @@ export async function getStaticPaths() {
   return {
     paths,
     fallback: false,
-  };
-}
-
-export async function getStaticProps() {
-  const response = await unsplash.get("/photos/random");
-  const photoUrl = response.data.urls.small ?? "";
-  return {
-    props: {
-      photoUrl,
-    },
   };
 }
 

@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import { Typography, Button, Input, Dropdown } from "@components/ui";
 import { css } from "@emotion/react";
 import { SearchIcon } from "@components/ui/Icon/Icons";
-import unsplash from "../core/api/unsplash";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,14 +11,13 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Hello: NextPage = ({ photoUrl }: any) => {
+const Hello: NextPage = () => {
   return (
     <Wrapper>
       <Head>
         <title>Hello</title>
         <meta name="description" content="Hello!" />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content={photoUrl} />
       </Head>
       <Typography.Text
         css={css`
@@ -55,15 +53,5 @@ const Hello: NextPage = ({ photoUrl }: any) => {
     </Wrapper>
   );
 };
-
-export async function getStaticProps() {
-  const response = await unsplash.get("/photos/random");
-  const photoUrl = response.data.urls.small ?? "";
-  return {
-    props: {
-      photoUrl,
-    },
-  };
-}
 
 export default Hello;
