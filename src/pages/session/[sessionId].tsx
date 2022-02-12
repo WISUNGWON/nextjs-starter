@@ -1,5 +1,6 @@
 import { Typography } from "@components/ui";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import unsplash from "src/core/api/unsplash";
 
@@ -14,7 +15,8 @@ const SessionDetail = ({ photoUrl }: any) => {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:image" content={photoUrl} />
       </Head>
-      <Typography.Text>Hello {sessionId}</Typography.Text>
+      <Typography.Text>Hello {photoUrl}</Typography.Text>
+      <Image src={photoUrl} height={200} width={200} alt="image" />
     </>
   );
 };
