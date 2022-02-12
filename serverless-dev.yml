@@ -3,7 +3,7 @@ dev-nextjs-starter:
   inputs:
     # domain: "lavtest.shop"
     # roleArn: "arn:aws:iam::226881276779:role/prod-nextjs-starter-lambda-role"
-    bucketName: dev-nextjs-starter-s3
+    # bucketName: dev-nextjs-starter-s3
     description: "*lambda-type*@Edge for dev-nextjs-starter"
     name:
       defaultLambda: dev-nextjs-starter-lambda
