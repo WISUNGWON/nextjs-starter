@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const env = require("./env-config.js");
+
 const nextConfig = {
   reactStrictMode: true,
   target: "serverless",
@@ -8,6 +10,7 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com"],
   },
+  plugins: [["transform-define", env]],
 };
 
 module.exports = nextConfig;
