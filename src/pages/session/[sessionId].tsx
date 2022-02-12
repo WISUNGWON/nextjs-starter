@@ -17,15 +17,4 @@ const SessionDetail = () => {
   );
 };
 
-export async function getStaticPaths() {
-  const ids = ["1", "2", "3", "4", "5"];
-  const paths = ids.map((id) => ({
-    params: { sessionId: id },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
 export default SessionDetail;
