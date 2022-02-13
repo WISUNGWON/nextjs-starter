@@ -1,7 +1,7 @@
 dev-nextjs-starter:
   component: "@sls-next/serverless-component"
   inputs:
-    domain: "dev.lavtest.shop"
+    domain: ["dev", "lavtest.shop"]
     roleArn: "arn:aws:iam::226881276779:role/prod-nextjs-starter-lambda-role"
     bucketName: dev-nextjs-starter-s3
     description: "*lambda-type*@Edge for dev-nextjs-starter"
