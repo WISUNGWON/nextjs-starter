@@ -1,6 +1,8 @@
+import { SerializedStyles } from "@emotion/react";
 import styled from "@emotion/styled";
+import { UseFormRegister, FieldValues } from "react-hook-form";
 
-export const Input = styled.input`
+const StyledInput = styled.input`
   width: 100%;
   height: 44px;
   padding: 12px;
@@ -33,3 +35,26 @@ export const Input = styled.input`
     }
   }
 `;
+
+interface IInputProps extends React.ComponentProps<typeof StyledInput> {
+  className?: string;
+  formName?: string;
+  label?: string;
+  labelStyle?: SerializedStyles;
+  register?: UseFormRegister<FieldValues>;
+}
+
+// TODO : subfix (button, icon 등등)
+export const Input = ({
+  formName,
+  className,
+  label,
+  labelStyle,
+  register,
+  ...props
+}: IInputProps) => (
+  <StyledInput
+    {...(register && { ...register(formName!, { required: true }) })}
+    {...props}
+  />
+);
