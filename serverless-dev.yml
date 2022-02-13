@@ -10,7 +10,7 @@ dev-nextjs-starter:
       apiLambda: dev-nextjs-starter-lambda
     cloudfront:
       distributionId: "E2TQICYGI5ZYLM"
-      aliases: ["dev.lavtest.shop"]
+      # aliases: ["dev.lavtest.shop"]
     publicDirectoryCache: false
     runtime:
       defaultLambda: "nodejs12.x"
