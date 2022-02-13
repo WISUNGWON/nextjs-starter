@@ -21,6 +21,7 @@ const Home: NextPage = () => {
   } = useForm();
 
   const onSubmit = (data: any) => console.log(data);
+  console.log(errors);
   return (
     <div
       css={css`
